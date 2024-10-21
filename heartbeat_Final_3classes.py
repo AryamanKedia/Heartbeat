@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Oct 12 16:32:42 2024
-
-@author: aryamankedia
-"""
 
 import os
 import glob
@@ -38,7 +31,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
 
 
 
-data_path = "/Users/aryamankedia/Downloads/aiheartbeat"
+data_path = "/aiheartbeat"
 print(os.listdir(data_path))
 
 train_data      = data_path 
@@ -577,7 +570,7 @@ regression_models = {
 }
 
 # Load all audio files from the folder and extract features
-folder_path = "/Users/aryamankedia/Downloads/aiheartbeat/Unlabelled"
+folder_path = "/Unlabelled"
 file_paths, features = load_audio_files_from_folder(folder_path)
 
 # Make predictions with all models and save results
@@ -652,7 +645,7 @@ model_pairs = {
 }
 
 # Load all audio files from the folder and extract features
-folder_path = "/Users/aryamankedia/Downloads/aiheartbeat/Unlabelled"
+folder_path = "/Unlabelled"
 file_paths, features = load_audio_files_from_folder(folder_path)
 
 # Make predictions with each model pair (classification + regression) and save combined results
@@ -795,7 +788,7 @@ X_unlabelled = X_unlabelled.reshape((X_unlabelled.shape[0], X_unlabelled.shape[1
 # ## 4. LSTM Model Prediction
 
 # Assuming the `lstm_model` is already loaded or trained before this section
-lstm_model = load_model('/Users/aryamankedia/Downloads/aiheartbeat/Heart_LSTM.keras')  # If the model is already saved, load it here
+lstm_model = load_model('/Heart_LSTM.keras')  # If the model is already saved, load it here
 
 # Make predictions on the unlabelled data
 lstm_predictions = lstm_model.predict(X_unlabelled)
